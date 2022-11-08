@@ -27,6 +27,22 @@ body {
 	margin-left: 4em;
 	padding-top: 1em;
 }
+
+.textPage {
+	padding-bottom: 1.2em;
+	font-size: 2rem;
+	color: #151515;
+	text-decoration: none;
+	cursor: pointer;
+	&__icon {
+		padding: 0.5em;
+	}
+}
+
+.textPage:hover {
+	font-weight: bold;
+	color: #535353;
+}
 .--active {
 	margin-bottom: 1.5em;
 }
@@ -166,6 +182,7 @@ body {
 		grid-row: 2/2;
 		grid-column: 1/2;
 		margin-top: 1em;
+		text-align: center;
 
 		&:after {
 			@include underline_after;
@@ -293,7 +310,7 @@ h3 {
 }
 
 .works {
-	margin: 5em 2em 2em 5em;
+	margin: 5em 2em 2em 2em;
 }
 
 .heading {
@@ -333,7 +350,6 @@ h3 {
 
 .contact-form {
 	text-transform: none;
-	margin-left: -1em;
 	padding: 1em;
 }
 .card {
@@ -433,6 +449,145 @@ i {
 
 .footer-text {
 	margin-left: 1em;
+}
+
+//animation
+.intro {
+	background: rgb(7, 7, 7);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.slider {
+	background: rgb(200, 198, 190);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: translateY(100%);
+}
+
+.intro-text {
+	text-align: left;
+	color: rgb(200, 198, 190);
+	font-size: 3rem;
+	letter-spacing: 0.05em;
+}
+
+.hideAnimation {
+	background: black;
+	overflow: hidden;
+}
+
+.hideAnimation span {
+	transform: translateY(100%);
+	display: inline-block;
+}
+
+//pagination
+.pagination-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pagination-number,
+.pagination-button {
+	font-size: 1.1rem;
+	background-color: transparent;
+	border-color: #f1f1ef;
+	margin: 0.25rem 0.25rem;
+	cursor: pointer;
+	height: 2.5rem;
+	width: 2.5rem;
+	border-radius: 0.2rem;
+}
+
+.pagination-number:hover,
+.pagination-button:not(.disabled):hover {
+	border-color: #f1f1ef;
+}
+
+.pagination-number.active {
+	color: #fff;
+}
+
+.hiddenPage {
+	display: none;
+}
+
+//firstProduct
+.container {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-gap: 1rem;
+	padding: 1em;
+}
+.tile {
+	position: relative;
+	overflow: hidden;
+	&__swirl{
+		height: 100%;
+	}
+}
+.tile img {
+	width: 100%;
+	object-fit: cover;
+	border-radius: 5%;
+}
+
+.tile:hover .textHover {
+	opacity: 1;
+	clip-path: circle(60% at center);
+}
+
+.textHover {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.85);
+	color: rgb(206, 205, 198);
+	clip-path: circle(0 at 50% 50%);
+	transition: clip-path 0.8s;
+}
+
+.textHover__h4 {
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+.tile:nth-child(1) {
+	grid-column: span 4;
+	grid-row: span 2;
+}
+
+.tile:nth-child(2),
+.tile:nth-child(3) {
+	grid-column: span 2;
+}
+
+.tile:nth-child(4) {
+	grid-column: span 3;
+	grid-row: span 2;
+}
+.tile:nth-child(6),.tile:nth-child(5){
+	grid-column: 4/span 3;
 }
 
 @import './small';

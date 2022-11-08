@@ -34,11 +34,25 @@
 	}
 
 	h3 {
-		font-size: 2em;
+		font-size: 1.6em;
 	}
 
 	.heading {
 		font-size: 2em;
+	}
+
+	.photos {
+		p {
+			font-size: 1.4em;
+			padding-bottom: 1em;
+		}
+	}
+	.textPage {
+		font-size: 1.2rem;
+	}
+
+	.newcheck > label {
+		font-size: 1.4em;
 	}
 
 	.cards {
@@ -72,5 +86,24 @@
 	.contact {
 		margin: 0;
 		text-align: center;
+	}
+}
+
+@media (max-width: 290px) {
+	.movingImg {
+		h1 {
+			font-size: 1em;
+		}
+	}
+	.cards {
+		padding: 6em 2em;
+		.lorem {
+			font-size: 1.2em;
+		}
+	}
+	.photos {
+		p {
+			font-size: 1.2em;
+		}
 	}
 }

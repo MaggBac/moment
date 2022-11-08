@@ -32,3 +32,20 @@
 		text-align: center;
 	}
 }
+
+@media screen and (max-width: 650px) {
+	.container {
+		display: block;
+	}
+	.tile {
+		margin-bottom: 1rem;
+	}
+}
+
+@media (width: 1024px) {
+	.movingImg {
+		&__arrows{
+			top: 10em;
+		}
+	}
+}
